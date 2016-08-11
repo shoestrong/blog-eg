@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+#createGoDivBox{
+	display: none;
+}
+#createGoDivBox div{
+	background-color: #00A6C2;
+	position: absolute;
+	border-radius: 50%;
+}
+		</style>
+	</head>
+	<body>
+	&#215;
+	<script type="text/javascript">
+init();
+function init(){
+	// 获取body
+	var parBox = document.body || document.getElementsByTagName('body')[0];
+	// 创建div
+	var createGoDivBox=document.createElement("div");
+	// 子盒子数量
+	var divNum=10;
+	// 添加ID
+	createGoDivBox.setAttribute("id","createGoDivBox");
+	// 插入body中
+	parBox.appendChild(createGoDivBox);
+	// 创建子盒子
+	addElementDiv(createGoDivBox,divNum);
+	// 添加事件
+	bindEvent(createGoDivBox,divNum);
+}		
+function addElementDiv(parent,createNum) {  // 创建子盒子
+　　　　var div;
+	for(var i = createNum;i>0;i--){
+		div = document.createElement("div");
+		div.style.width = i+"px";
+		div.style.height = i+"px";
+		parent.appendChild(div);
+	}		　　　　
+　　}
+function bindEvent(createGoDivBox,divNum){	// 添加事件		
+	var divs = createGoDivBox.getElementsByTagName('div');			
+	document.onmousemove = function(event){
+		createGoDivBox.style.display ="block";
+		divs[0].style.left = event.clientX-divNum/2 + "px";
+		divs[0].style.top = event.clientY-divNum/2 + "px";
+		for (var i = divs.length-1;i>0;i--) {
+			divs[i].style.left = divs[i-1].style.left;
+			divs[i].style.top = divs[i-1].style.top;
+		}
+	}
+}
+		</script>
+	</body>
+</html>
