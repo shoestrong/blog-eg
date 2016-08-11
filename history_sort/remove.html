@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>历史纪录排序</title>
+	<title></title>
 	<script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 	<style type="text/css" media="screen">
 		.removeEle,.showEle {
@@ -40,13 +40,13 @@
 	 */
 	
 	function crateHistory(showBox,btn,txt){	
-		if(typeof window.sessionStorage == 'undefined'){
+		if(typeof window.localStorage == 'undefined'){
 			alert("浏览器暂不支持webStorage,请使用最新浏览器打开");
 			return false;
 		}
 		var arr=[];
-		if(sessionStorage.getItem("hository")!==null){
-			arr=sessionStorage.getItem("hository").split(",");
+		if(localStorage.getItem("hository")!==null){
+			arr=localStorage.getItem("hository").split(",");
 			for(var i=0;i<arr.length;i++){
 				$(showBox).prepend("<span>"+arr[i]+"</span>");
 			}
@@ -74,7 +74,7 @@
 				$(showBox).prepend("<span>"+v+"</span>");
 				$(txt).val("");
 			}
-			sessionStorage.setItem("hository",arr);
+			localStorage.setItem("hository",arr);
 		});
 	}
 
