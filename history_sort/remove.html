@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<style type="text/css" media="screen">
+		.removeEle,.showEle {
+			margin-bottom: 10px;
+		}
+		.showEle span{
+			display: inline-block;
+			height: 20px;
+			line-height: 20px;
+			border-radius:5px;
+			margin-right:10px;
+			padding: 0 10px;
+			border:1px solid #ccc;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="removeEle">
+		<input type="text" name="" id="txt">
+		<input type="button" name="" value="添加" id="btn">
+	</div>
+	<div class="showEle">
+		<!-- <span>1历史纪录</span>
+		<span>2历史纪录</span> -->
+	</div>
+	<script>
+
+	/**
+	 * [crateHistory 显示历史纪录]
+	 * @param  {string:styleName} showBox 显示历史纪录的盒子
+	 * @param  {string:styleName} btn  点击添加的按钮
+	 * @param  {string:styleName} txt  要输入的文本框
+	 */
+	
+	function crateHistory(showBox,btn,txt){	
+		if(typeof window.sessionStorage == 'undefined'){
+			alert("浏览器暂不支持webStorage,请使用最新浏览器打开");
+			return false;
+		}
+		var arr=[];
+		if(sessionStorage.getItem("hository")!==null){
+			arr=sessionStorage.getItem("hository").split(",");
+			for(var i=0;i<arr.length;i++){
+				$(showBox).prepend("<span>"+arr[i]+"</span>");
+			}
+		}
+		$(btn).click(function(event) {			
+			var v=$.trim($(txt).val());
+			var html="";
+			if(v.length!==0){
+				if($.inArray(v,arr)===-1){
+					arr.push(v);
+				}else{
+					for(var i=0; i<arr.length; i++) {
+					    if(arr[i] == v) {
+					      arr.splice(i, 1);
+					      break;
+					    }
+					}
+					arr.unshift(v);
+					for(var i=0;i<$(showBox).children().length;i++){
+						if($(showBox).children().eq(i).text()===v){
+							$(showBox).children().eq(i).remove();
+						}
+					}
+				}
+				$(showBox).prepend("<span>"+v+"</span>");
+				$(txt).val("");
+			}
+			sessionStorage.setItem("hository",arr);
+		});
+	}
+
+	crateHistory(".showEle","#btn","#txt");
+		
+	</script>
+
+
+	<video autoplay="autoplay" loop="loop" name="media"><source src="http://az29176.vo.msecnd.net/videocontent/DwarfFlyingSquirrel_GettyRM-516611677_768_ZH-CN.mp4" type="video/mp4"></video>
+</body>
+</html>
