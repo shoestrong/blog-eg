@@ -2,27 +2,21 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>俄罗斯方块</title>
-    <style type="text/css">
-    　　body { color:#dbdbdb; background:#000; font:25px/25px 宋体; }
-    　　#box { position:absolute; left:50%; top:10px; margin-left:-220px; width:252px;border:#999 5px ridge; }
-    　　#info {    position:absolute; left:50%; top:30px; margin-left:90px; font-family: Microsoft YaHei;}
-    　　#next { padding:8px;width:105px; font-family: 宋体;}
-    　　#rend { padding-top:30px; font:16px/25px 宋体;font-family: Microsoft YaHei; }
-    　　#rend span { color:#ffff00; }
-    </style>
 </head>
 
-<body class="c0">
-    <div id="box" class="color"></div>
-    <div id="info">
-        NEXT:<div id="next" class="color"></div>
+<body class="c0" style="color:#dbdbdb; background:#000; font:25px/25px 宋体;">
+    <div id="box" class="color" style="position:absolute; left:50%; top:10px; margin-left:-220px; width:252px;border:#999 5px ridge;"></div>
+    <div id="info" style="position:absolute; left:50%; top:30px; margin-left:90px; font-family: Microsoft YaHei;">
+        NEXT:<div id="next" class="color" style="padding:8px;width:105px; font-family: 宋体;"></div>
         <div id="text"></div>
-        <div id="rend">
-            <span>←↓→</span>：控制方向<br />
-            <span>Z X ↑</span>：改变形状<br />
-            <span>Shift</span> ：一键到底<br />
-            <span>空格键</span>：暂停<br />
+        <div id="rend" style="padding-top:30px; font:16px/25px 宋体;font-family: Microsoft YaHei;">
+            <span style="color:#ffff00;">←↓→</span>：控制方向<br />
+            <span style="color:#ffff00;">Z X ↑</span>：改变形状<br />
+            <span style="color:#ffff00;">Shift</span> ：一键到底<br />
+            <span style="color:#ffff00;">空格键</span>：暂停<br />
         </div>
     </div>
     
