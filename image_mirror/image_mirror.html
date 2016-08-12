@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>反转图片</title>
+	<style>
+		#btn{
+			margin-bottom: 20px;
+		}
+		#box{
+			-webkit-transition: all 2s;
+			-moz-transition: all 2s;
+			-o-transition: all 2s;
+			transition: all 2s;
+		}
+		.filp{
+		    -webkit-transform: rotateY(180deg);
+		    -moz-transform: skew(0deg, 180deg) scale(-1, 1);
+		    -o-transform: skew(0deg, 180deg) scale(-1, 1);
+		    transform: rotateY(180deg);
+		}
+	</style>
+</head>
+<body>
+<button id="btn">点击我你会发现什么？</button>
+<div id="box">
+<img src="http://images.cnblogs.com/cnblogs_com/shoestrong/866556/o_see.jpg">
+<br />
+<p><a href="http://www.cnblogs.com/shoestrong">shoestrong的blog</a>
+</div>	
+<script>
+	var btn=document.getElementById("btn");
+	var box=document.getElementById("box");
+	var flag=false;
+	btn.onclick=function(){
+		if(!flag){
+			box.setAttribute("class","filp");
+			flag=true;
+		}else{
+			box.setAttribute("class","");
+			flag=false;
+		}
+	}
+</script>
+</body>
+</html>
