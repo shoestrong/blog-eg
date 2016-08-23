@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>原生Js页面滚动延迟加载图片</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0
+    }
+    
+    img.scrollLoading {
+        border: 1px solid #ccc;
+        display: block;
+        margin-top: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="content"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+var _CalF = {
+    $: function(object) { //选择器 
+        if (object === undefined) return;
+        var getArr = function(name, tagName, attr) {
+            var tagName = tagName || '*',
+                eles = document.getElementsByTagName(tagName),
+                clas = (typeof document.body.style.maxHeight === "undefined") ? "className" : "class"; //ie6 
+            attr = attr || clas,
+                Arr = [];
+            for (var i = 0; i < eles.length; i++) {
+                if (eles[i].getAttribute(attr) == name) {
+                    Arr.push(eles[i]);
+                }
+            }
+            return Arr;
+        };
+        if (object.indexOf('#') === 0) { //#id 
+            return document.getElementById(object.substring(1));
+        } else if (object.indexOf('.') === 0) { //.class 
+            return getArr(object.substring(1));
+        } else if (object.match(/=/g)) { //attr=name 
+            return getArr(object.substring(object.search(/=/g) + 1), null, object.substring(0, object.search(/=/g)));
+        } else if (object.match(/./g)) { //tagName.className 
+            return getArr(object.split('.')[1], object.split('.')[0]);
+        }
+    },
+    getPosition: function(obj) { //获取元素在页面里的位置和宽高 
+        var top = 0,
+            left = 0,
+            width = obj.offsetWidth,
+            height = obj.offsetHeight;
+        while (obj.offsetParent) {
+            top += obj.offsetTop;
+            left += obj.offsetLeft;
+            obj = obj.offsetParent;
+        }
+        return {
+            "top": top,
+            "left": left,
+            "width": width,
+            "height": height
+        };
+    }
+};
+
+//添加图片list 
+var _temp = [];
+for (var i = 1; i < 21; i++) {
+    _temp.push('<img class="scrollLoading" data-src="http://images.cnblogs.com/cnblogs_com/Darren_code/311197/o_' + i + '.jpg" src="http://images.cnitblog.com/blog/150659/201306/23160223-c81dd9aa9a2a4071a47b0ced2c9118bc.gif" /><br />图片' + i);
+}
+_CalF.$("#content").innerHTML = _temp.join("");
+
+function scrollLoad() {
+    this.init.apply(this, arguments);
+}
+scrollLoad.prototype = {
+    init: function(className) {
+        var className = "img." + className,
+            imgs = _CalF.$(className),
+            that = this;
+        this.imgs = imgs;
+        that.loadImg();
+        window.onscroll = function() {
+            that.time = setTimeout(function() {
+                that.loadImg();
+            }, 400);
+        }
+    },
+    loadImg: function() {
+        var imgs = this.imgs.reverse(), //获取数组翻转 
+            len = imgs.length;
+        if (imgs.length === 0) {
+            clearTimeout(this.time);
+            return;
+        }
+        for (var j = len - 1; j >= 0; j--) { //递减 
+            var img = imgs[j],
+                imgTop = _CalF.getPosition(img).top,
+                imgSrc = img.getAttribute("data-src"),
+                offsetPage = window.pageYOffset ? window.pageYOffset : window.document.documentElement.scrollTop, //滚动条的top值 
+                bodyHeight = document.documentElement.clientHeight; //body的高度 
+            if ((offsetPage + bodyHeight / 2) > (imgTop - bodyHeight / 2)) {
+                img.src = imgSrc;
+                this.imgs.splice(j, 1);
+            }
+        }
+    }
+}
+
+setTimeout(function(){
+	var img1 = new scrollLoad("scrollLoading");
+},2000)
+</script>
