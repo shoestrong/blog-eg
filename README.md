@@ -10,4 +10,4 @@
 
 ### 5.[num_to_zh](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/num_to_zh/num_to_zh.html) => 数字转化为汉字
 
-### 6.[load_img](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/load_img/loadImg.html) => 滚动加载图片
+### 6.[load_img](http://htmlpreview.github.io/?https://github.com/Shoestrong/shoestrong_eg/blob/master/load_img/loadImg.html) => 滚动加载图片
