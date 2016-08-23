@@ -9,3 +9,5 @@
 ### 4.[russian_box](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/russianBox/russianBox.html) => 这是一个俄罗斯方块游戏
 
 ### 5.[num_to_zh](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/num_to_zh/num_to_zh.html) => 数字转化为汉字
+
+### 6.[load_img](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/load_img/load_img.html) => 滚动加载图片
