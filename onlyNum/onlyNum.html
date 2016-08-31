@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test</title>
+        <script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    </head>
+    <body>
+    只能输入数字、小数、负数<br />
+    <input type="text" id="intNum" />
+    <script type="text/javascript">
+		function isValidNumber(str) {
+		    return !isNaN(+str)
+		}
+
+		$("#intNum").bind("blur", function(event) {
+			var newValue="";
+			var getValue = $(this).val();
+		    if(isValidNumber(getValue)){
+		    	newValue = +getValue;
+		    }else if(newValue==""){
+		    	alert("输入的不为数字");
+		    	$(this).val("");
+		    }
+			$(this).val(newValue);
+		})
+        //敲击按键时触发
+        // $("#intNum").bind("keypress", function(event) {
+        //     var getValue = $(this).val();
+        //     //控制第一个不能输入小数点"."
+        //     if (getValue.length == 0 && event.which == 46) {
+        //         event.preventDefault();
+        //         return;
+        //     }
+        //     //控制只能输入一个小数点"."
+        //     if (getValue.indexOf('.') != -1 && event.which == 46) {
+        //         event.preventDefault();
+        //         return;
+        //     }
+        //     //控制只能输入一个负号"-"
+        //     if (getValue.indexOf('-') != -1 && event.which == 45) {
+        //         event.preventDefault();
+        //         return;
+        //     }
+        //     //控制只能输入的值
+        //     if (event.which && (event.which < 48 || event.which > 57) && event.which != 8 && event.which != 46 && event.which != 45) {
+        //         event.preventDefault();
+        //         return;
+        //     }
+        // })
+        // //失去焦点是触发
+        // $("#intNum").bind("blur", function(event) {
+        //     var value = $(this).val();
+        //     if (/\.$/.test(value)) {   // 最后一位为小数点去掉
+        //         value = value.replace(/\.$/, "");
+        //     }else if(/0+\./.test(value)){  // 小数去0
+        //     	value =value.substr(0,1)!="-"?value.replace(/0+\./, "0."):value.replace(/0+\./, "0.");
+        //     }else if(/^0+/.test(value)){   // 正数去0
+        //     	value = value.replace(/^0+/, "");
+        //     }
+        //     $(this).val(value);
+        // })
+    </script>
+    </body>
+</html>
