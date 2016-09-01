@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>点击页面任意位置显示出心性</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"> 
+	<meta content="yes" name="apple-touch-fullscreen"> 
+	<meta content="telephone=no,email=no" name="format-detection"> 
+	<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+	<script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		html{
+			font-family: "microsoft yahei";
+		}
+		html,body,.rainContainer{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		.rainContainer{
+			display: -webkit-box;
+			display: -moz-box;
+			display: box;
+			-webkit-box-orient: vertical;
+			-moz-box-orient: vertical;
+			box-orient: vertical;
+		}
+		.header{
+			height: 44px;
+			background-color: #00A6C2;
+			width: 100%;
+			text-align: center;
+			line-height: 44px;
+			color: #fff;
+		}
+		.rainBox{
+			-webkit-box-flex:1;
+			-moz-box-flex:1;
+			box-flex:1;
+			background-color: #c8e6ec;
+		}
+		.rainCol{
+			width: 100%;
+			display: -webkit-box;
+			display: -moz-box;
+			display: box;
+			-webkit-box-orient: horizontal;
+			-moz-box-orient: horizontal;
+			box-orient: horizontal;
+		}
+		.rainCol ul{
+			-webkit-box-flex:1;
+			-moz-box-flex:1;
+			box-flex:1;
+		}
+		.rainCol ul li{
+			height: 24px;
+			line-height: 24px;
+			border-radius: 12px;
+			margin: 20px 5px;
+			border:1px solid #00A6C2;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div class="rainContainer">	
+	<header class="header">
+		点击页面任意位置显示出心形
+	</header>
+	<!-- <div class="rainBox" id="rainBox">
+		<div class="rainCol" id="rainCol">
+			<ul>
+				<li>Gao</li>
+				<li>Gao</li>
+				<li>Gao</li>
+				<li>Gao</li>
+			</ul>
+			<ul>
+				<li>Gao</li>
+				<li>Gao</li>
+				<li>Gao</li>
+				<li>Gao</li>
+			</ul>
+			<ul>
+				<li>Gao</li>
+				<li>Gao</li>
+				<li>Gao</li>
+				<li>Gao</li>
+			</ul>
+			<ul>
+				<li>Gao</li>
+				<li>Gao</li>
+				<li>Gao</li>
+				<li>Gao</li>
+			</ul>
+		</div>
+	</div> -->
+</div>
+
+	<script>
+		// function Raindown(){
+		// 	this.col=7;
+		// 	this.randerBox=$("#rainCol");
+		// }
+
+		// Raindown.prototype={
+		// 	init:function(){
+		// 		this.colRender();
+		// 	},
+		// 	colRender:function(){
+		// 		var html="";
+		// 		for(var i=0;i<this.col.length;i++){
+		// 			html+="<ul>23</ul>";
+		// 		};
+		// 		this.randerBox.append(html);
+		// 	}
+		// }
+		// var rain=new Raindown();
+		// rain.init();
+	</script>
+
+
+	<script>
+	/*js页面点击爱心弹出效果*/
+	(function(window,document,undefined){
+        var hearts = [];
+        window.requestAnimationFrame = (function(){
+                return window.requestAnimationFrame || 
+                       window.webkitRequestAnimationFrame ||
+                       window.mozRequestAnimationFrame ||
+                       window.oRequestAnimationFrame ||
+                       window.msRequestAnimationFrame ||
+                       function (callback){
+                               setTimeout(callback,1000/60);
+                       }
+        })();
+        init();
+        function init(){
+                css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                attachEvent();
+                gameloop();
+        }
+        function gameloop(){
+            for(var i=0;i<hearts.length;i++){
+                if(hearts[i].alpha <=0){
+                        document.body.removeChild(hearts[i].el);
+                        hearts.splice(i,1);
+                        continue;
+                }
+                hearts[i].y--;
+                hearts[i].scale += 0.004;
+                hearts[i].alpha -= 0.013;
+                hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+            }
+            requestAnimationFrame(gameloop);
+        }
+        function attachEvent(){
+            var old = typeof window.onclick==="function" && window.onclick;
+            window.onclick = function(event){
+                    old && old();
+                    createHeart(event);
+            }
+        }
+        function createHeart(event){
+            var d = document.createElement("div");
+            d.className = "heart";
+            hearts.push({
+                    el : d,
+                    x : event.clientX - 5,
+                    y : event.clientY - 5,
+                    scale : 1,
+                    alpha : 1,
+                    color : randomColor()
+            });
+            document.body.appendChild(d);
+	    }
+	    function css(css){
+	            var style = document.createElement("style");
+	                style.type="text/css";
+	                try{
+	                    style.appendChild(document.createTextNode(css));
+	                }catch(ex){
+	                    style.styleSheet.cssText = css;
+	                }
+	                document.getElementsByTagName('head')[0].appendChild(style);
+	    }
+        function randomColor(){
+                return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+        }
+	})(window,document);
+	</script>
+</body>
+</html>
