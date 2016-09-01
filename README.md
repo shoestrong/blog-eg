@@ -15,3 +15,5 @@
 ### 7.[only_num](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/onlyNum/onlyNum.html) => 只能输入数字
 
 ### 8.[remove_num_point](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/remove_num_point/remove_num_point.html) => 是否为正整数
+
+### 9.[click_everywhere_heart](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/click_everywhere_heartt/click_everywhere_heart.html) => 点击页面任意位置显示出心形
