@@ -13,3 +13,5 @@
 ### 6.[load_img](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/load_img/loadImg.html) => 滚动加载图片
 
 ### 7.[only_num](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/onlyNum/onlyNum.html) => 只能输入数字
+
+### 8.[remove_num_point](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/remove_num_point/remove_num_point.html) => 是否为正整数
