@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去除小数点</title>
+</head>
+<body>
+	<input type="text" placeholder="输入正整数" id="num">
+	<input type="button" id="btn" value="点击判断">
+	<p id="show" style="color:red;">显示结果</p>
+
+	<script>
+	var num=document.getElementById("num"),
+		btn=document.getElementById("btn"),
+		show=document.getElementById("show");
+	btn.onclick=function(){
+		newNum=num.value;
+		if(!newNum||isNaN(newNum)){
+		    show.innerHTML='请输入数字！';
+		}else if(newNum<0){
+		    show.innerHTML='请输入一个大于0的数字！';
+		}else if(String(newNum).indexOf(".")>-1){
+		    show.innerHTML='请输入整数！';
+		}else{
+		    show.innerHTML=newNum+'将会是你的幸运数字！';
+		}
+	}
+	</script>
+</body>
+</html>
