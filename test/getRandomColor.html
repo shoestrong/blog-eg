@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机改变颜色色值</title>
+</head>
+<body>
+刷新页面你会发现什么？<br><br>
+<div style="height:800px;width:100%;text-align:center;line-height:800px;font-size:50px" id="app"></div>
+<br>
+<button id="btn">或许你点击我</button>
+	<script>
+		var app=document.getElementById("app");
+		function changeBackground(){
+			var ran=(function(h) {
+					return new Array(7 - h.length).join("0") + h
+				})((Math.random() * 0x1000000 << 0).toString(16));
+			var getRandomColor = '#' + ran;
+
+			app.style.background=getRandomColor;
+			app.innerHTML="当前色值是#"+ran
+		}
+		changeBackground();
+		document.getElementById('btn').onclick=changeBackground;
+	</script>
+</body>
+</html>
