@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上下移动整行</title>
+	<script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+	<style>
+		ul{
+			width: 100%;
+			padding: 0;margin: 0;
+		}
+		ul li{
+			padding: 0;margin: 0;
+			height: 30px;
+			line-height: 30px;
+			width: 100%;
+			border-bottom: 1px solid #ccc;
+		}
+		ul li:nth-child(odd){
+			background-color: #abcdef;
+		}
+		ul li span{
+			float: right;
+			display: none;
+		}
+		ul li:hover span{
+			display: block;
+		}
+		ul li span i{
+			display: inline-block;
+			cursor: pointer;
+			width: 20px;height: 20px;
+			line-height: 20px;
+			text-align: center;
+			border: 1px solid #fff;
+			border-radius: 50%;
+			margin-right: 10px;
+			font-style: normal;
+			-webkit-user-select: none;
+		}
+		ul li span i.up{
+			color:#fff;
+		}
+		ul li span i.down{
+			color:#fff;
+		}
+		ul li:first-child span i.up,ul li:last-child span i.down{
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>列表文字11111111111111111111111<span><i class="up">↑</i><i class="down">↓</i></span></li>
+		<li>列表文字22222222222222222222<span><i class="up">↑</i><i class="down">↓</i></span></li>
+		<li>列表文字33333333333333333<span><i class="up">↑</i><i class="down">↓</i></span></li>
+		<li>列表文字44444444444444<span><i class="up">↑</i><i class="down">↓</i></span></li>
+		<li>列表文字5555555555<span><i class="up">↑</i><i class="down">↓</i></span></li>
+		<li>列表文字666666<span><i class="up">↑</i><i class="down">↓</i></span></li>
+		<li>列表文字777<span><i class="up">↑</i><i class="down">↓</i></span></li>
+		<li>列表文字8<span><i class="up">↑</i><i class="down">↓</i></span></li>
+	</ul>
+	<script>
+	$("#list li").each(function(){
+		var ran=(function(h) {
+					return new Array(7 - h.length).join("0") + h
+				})((Math.random() * 0x1000000 << 0).toString(16));
+		$(this).css("background-color","#"+ran)
+	})
+		$("#list").on("click","li",function(e){
+			var self=$(this);
+			var idx=self.index();
+			var tar=e.target || window.event;
+			if($(tar).attr("class")==="up"){
+				self.insertBefore(self.prev());
+			}
+			if($(tar).attr("class")==="down"){
+				self.insertAfter(self.next());
+			}
+		})
+	</script>
+</body>
+</html>
