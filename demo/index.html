@@ -1,1 +1,148 @@
-<!DOCTYPE html><html><head>    <title>移动菜单(可折回)_CSS3-html5在线测试</title>    <link rel="shortcut icon" href="favicon.ico" />    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">    <meta name="keywords" content="滚动滑动,导航菜单" />    <meta name="description" content="移动菜单(可折回)" />    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />    <!-- 优先使用IE最新版本和 Chrome -->        <link rel="stylesheet" href="./templets/default/pages/addon/scroll/simplescrollbars.css" />    <link rel="stylesheet" href="./templets/default/pages/lib/codemirror.css" />    <link rel="stylesheet" href="./templets/default/pages/doc/docs.css" />    <link rel="stylesheet" href="./templets/default/pages/style/layout.css" />    <link rel="stylesheet" href="./templets/default/pages/style/global.css" />    <link rel="stylesheet" href="./templets/default/pages/style/index.css" /></head><body>    <header>        <!--nav-->        <nav class="p_d">            <ul>                <li><a href='javascript:;' onclick="history.go(-1)">返回</a>  <a href='index.html'>主页</a> </li>                <li class="right hide color_fff wet2www">移动菜单(可折回)</li>            </ul>            <i class="erweima"><div class="tooltip"><img src="./templets/default/images/erweima.svg" width="20" height="20" />    <span><p>使用手机访问</p><i id="showCode" style="display:block;width:180px;height:180px;background-color:#fff;"></i></span></div>    </i>        </nav>    </header>    <!--nav-->    <section>        <!--content-->        <form>            <div class="wrap wrap2">                <div class="top">                    <div class="top_left">                        <textarea id="code" name="code"></textarea>                    </div>                    <div class="h_drag" id="h_drag">                        <div class="tip">                            <div class="line"></div>                            <div class="line"></div>                            <div class="line"></div>                        </div>                    </div>                    <div class="top_right">                        <iframe id="preview" style="background:#eee" src="./page/list_P0.html"></iframe>                                            </div>                </div>                <div class="v_drag" id="v_drag">                    <div class="tip">                        <div class="line"></div>                        <div class="line"></div>                        <div class="line"></div>                    </div>                </div>            </div>        </form>    </section>    <!--content End-->    <script type="text/javascript" src="./templets/default/pages/lib/codemirror.js"></script>    <script type="text/javascript" src="./templets/default/pages/mode/markdown/markdown.js"></script>    <script type="text/javascript" src="./templets/default/pages/addon/scroll/simplescrollbars.js"></script>    <script type="text/javascript" src="./templets/default/pages/mode/xml/xml.js"></script>    <script type="text/javascript" src="./templets/default/pages/mode/javascript/javascript.js"></script>    <script type="text/javascript" src="./templets/default/pages/mode/css/css.js"></script>    <script src="./templets/default/pages/mode/htmlmixed/htmlmixed.js"></script>    <script type="text/javascript" src="./templets/default/pages/addon/selection/active-line.js"></script>    <script type="text/javascript" src="./templets/default/pages/addon/edit/closetag.js"></script>    <script type="text/javascript" src="./templets/default/pages/addon/fold/xml-fold.js"></script>    <script type="text/javascript" src="./templets/default/pages/jquery-1.11.0.min.js"></script>    <script type="text/javascript" src="./templets/default/pages/jquery.cookie.js"></script>    <script type="text/javascript" src="./templets/default/pages/custompage.js"></script>    <script type="text/javascript" src="./templets/default/pages/custompage0.js"></script>    <script type="text/javascript" src="./templets/default/pages/lib/jquery.qrcode.min.js"></script>	<script type="text/javascript">	var iSrc=$("#preview").attr("src");	$.ajax({		url: iSrc,		dataType: 'html'	})	.done(function(data) {		$("#code").val(data);	    var delay;	    // Initialize CodeMirror editor with a nice html5 canvas demo.	    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {	        lineNumbers: true,	        lineWrapping: true,	        mode: 'text/html',	        styleActiveLine: true,	        autoCloseTags: true,	        scrollbarStyle: "simple",	        tabMode: 'indent'	    });	    editor.on("change", function() {	        clearTimeout( delay);	        delay = setTimeout(updatePreview, 300);	    });	    function updatePreview() {	        var previewFrame = document.getElementById('preview');	        var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;	        preview.open();	        preview.write(editor.getValue());	        preview.close();	    }	    setTimeout(updatePreview, 300);		// $('#showCode').qrcode(iSrc);					$("#showCode").empty();		var toUtf8=function(str) {   		    var out, i, len, c;   		    out = "";   		    len = str.length;   		    for(i = 0; i < len; i++) {   		    	c = str.charCodeAt(i);   		    	if ((c >= 0x0001) && (c <= 0x007F)) {   		        	out += str.charAt(i);   		    	} else if (c > 0x07FF) {   		        	out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));   		        	out += String.fromCharCode(0x80 | ((c >>  6) & 0x3F));   		        	out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));   		    	} else {   		        	out += String.fromCharCode(0xC0 | ((c >>  6) & 0x1F));   		        	out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));   		    	}   		    }   		    return out;   		};		var str = toUtf8(iSrc);				$("#showCode").qrcode({			render: "table",			width: 180,			height:180,			text: str		});	});    </script></body></html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>移动菜单(可折回)_CSS3-html5在线测试</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="滚动滑动,导航菜单" />
+    <meta name="description" content="移动菜单(可折回)" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 优先使用IE最新版本和 Chrome -->
+    
+    <link rel="stylesheet" href="./templets/default/pages/addon/scroll/simplescrollbars.css" />
+    <link rel="stylesheet" href="./templets/default/pages/lib/codemirror.css" />
+    <link rel="stylesheet" href="./templets/default/pages/doc/docs.css" />
+    <link rel="stylesheet" href="./templets/default/pages/style/layout.css" />
+    <link rel="stylesheet" href="./templets/default/pages/style/global.css" />
+    <link rel="stylesheet" href="./templets/default/pages/style/index.css" />
+</head>
+
+<body>
+    <header>
+        <!--nav-->
+        <nav class="p_d">
+            <ul>
+                <li><a href='javascript:;' onclick="history.go(-1)">返回</a>  <a href='index.html'>主页</a> </li>
+                <li class="right hide color_fff wet2www">移动菜单(可折回)</li>
+            </ul>
+            <i class="erweima"><div class="tooltip"><img src="./templets/default/images/erweima.svg" width="20" height="20" />
+    <span><p>使用手机访问</p><i id="showCode" style="display:block;width:180px;height:180px;background-color:#fff;"></i></span></div>
+    </i>
+        </nav>
+    </header>
+    <!--nav-->
+    <section>
+        <!--content-->
+        <form>
+            <div class="wrap wrap2">
+                <div class="top">
+                    <div class="top_left">
+                        <textarea id="code" name="code"></textarea>
+                    </div>
+                    <div class="h_drag" id="h_drag">
+                        <div class="tip">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div class="top_right">
+                        <iframe id="preview" style="background:#eee" src="http://eg.shoestrong.cc/demo/page/list_P0.html"></iframe>                        
+                    </div>
+                </div>
+                <div class="v_drag" id="v_drag">
+                    <div class="tip">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!--content End-->
+    <script type="text/javascript" src="./templets/default/pages/lib/codemirror.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/mode/markdown/markdown.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/addon/scroll/simplescrollbars.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/mode/css/css.js"></script>
+    <script src="./templets/default/pages/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/addon/selection/active-line.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/addon/edit/closetag.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/addon/fold/xml-fold.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/jquery.cookie.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/custompage.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/custompage0.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/lib/jquery.qrcode.min.js"></script>
+	<script type="text/javascript">
+	var iSrc=$("#preview").attr("src");
+	$.ajax({
+		url: iSrc,
+		dataType: 'html'
+	})
+	.done(function(data) {
+		$("#code").val(data);
+	    var delay;
+	    // Initialize CodeMirror editor with a nice html5 canvas demo.
+	    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+	        lineNumbers: true,
+	        lineWrapping: true,
+	        mode: 'text/html',
+	        styleActiveLine: true,
+	        autoCloseTags: true,
+	        scrollbarStyle: "simple",
+	        tabMode: 'indent'
+	    });
+	    editor.on("change", function() {
+	        clearTimeout( delay);
+	        delay = setTimeout(updatePreview, 300);
+	    });
+
+	    function updatePreview() {
+	        var previewFrame = document.getElementById('preview');
+	        var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+	        preview.open();
+	        preview.write(editor.getValue());
+	        preview.close();
+	    }
+	    setTimeout(updatePreview, 300);
+		// $('#showCode').qrcode(iSrc);
+			
+		$("#showCode").empty();
+		var toUtf8=function(str) {   
+		    var out, i, len, c;   
+		    out = "";   
+		    len = str.length;   
+		    for(i = 0; i < len; i++) {   
+		    	c = str.charCodeAt(i);   
+		    	if ((c >= 0x0001) && (c <= 0x007F)) {   
+		        	out += str.charAt(i);   
+		    	} else if (c > 0x07FF) {   
+		        	out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));   
+		        	out += String.fromCharCode(0x80 | ((c >>  6) & 0x3F));   
+		        	out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));   
+		    	} else {   
+		        	out += String.fromCharCode(0xC0 | ((c >>  6) & 0x1F));   
+		        	out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));   
+		    	}   
+		    }   
+		    return out;   
+		};
+		var str = toUtf8(iSrc);
+		
+		$("#showCode").qrcode({
+			render: "table",
+			width: 180,
+			height:180,
+			text: str
+		});
+	});
+
+    </script>
+</body>
+
+</html>
