@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1 {
+  letter-spacing: -3px;
+  font-size: 3.23em;
+  font-weight: bold;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.23em;
+  font-weight: bold;
+  margin: .5em 0;
+  letter-spacing: -1px;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: .4em 0;
+}
+
+pre {
+  background-color: #eee;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  padding: 1em;
+}
+
+pre.code {
+  margin: 0 1em;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0px;
+  /*padding-left: 1.2em;*/
+}
+.clear { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clear { height: 1%; }
+.clear { display: block; }
+/* close commented backslash hack */

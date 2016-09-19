@@ -1,0 +1,156 @@
+.advert{
+    position: absolute;
+    left: 20px;
+    top: 100px;
+    z-index: 99;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    font-size: 12px;
+    background: rgba(0, 0, 0, .99);
+}
+
+.advert .ctrl-box {
+    font-size: 12px;
+    float: left;
+    position: absolute;
+    z-index: 9999999;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.advert .ctrl-box #ck-dis,
+.advert .ctrl-box label,
+.advert .ctrl-box span {
+    vertical-align: middle;
+}
+
+.advert .ctrl-box * {
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+}
+
+.tips {
+    width: 200px;
+    padding: 10px 0;
+    position: absolute;
+    top: 200px;
+    color: #555;
+    font-size: 12px;
+    background: #ddd;
+    left: 0
+}
+
+.tips dl dt {
+    width: 100%;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+}
+
+.tips dl dd {
+    float: left;
+    line-height: 30px;
+    padding-left: 8%;
+    text-align: left;
+    width: 42%;
+}
+
+.close {
+    margin-bottom: 5px;
+    position: absolute;
+    top: -2px;
+    left: 14px;
+}
+
+.right {
+    width: 50%;
+    text-align: right
+}
+
+.wet2www {
+    padding-right: 50px;
+}
+
+.erweima {
+    position: absolute;
+    bottom: 8px;
+    right: 30px;
+    z-index: 99999999
+}
+/*erweima_tips*/
+
+.tooltip {
+    position: relative;
+    background: ;
+    cursor: help;
+    display: inline-block;
+    text-decoration: none;
+    color: #222;
+    outline: none;
+}
+
+.tooltip span p {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.tooltip span {
+    visibility: hidden;
+    position: absolute;
+    bottom: 40px;
+    left: -180px;
+    z-index: 999;
+    width: 185px;
+    margin-left: 0px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    opacity: .9;
+    background: #fff;
+}
+
+.tooltip:hover {
+    border: 0;
+    /* IE6 fix */
+}
+
+.tooltip:hover span {
+    visibility: visible;
+}
+
+.tooltip span:before,
+.tooltip span:after {
+    content: "";
+    position: absolute;
+    z-index: 1000;
+    bottom: -7px;
+    left: 90%;
+    margin-left: -8px;
+    border-top: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 0;
+}
+
+.tooltip span:before {
+    border-top-color: #ccc;
+    bottom: -8px;
+}
+
+@media screen and (max-width:1010px) {
+    .erweima {
+        display: none;
+        right: 0;
+    }
+    .wet2www {
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .erweima {
+        display: none
+    }
+}
