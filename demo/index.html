@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <title>移动菜单(可折回)_CSS3-html5在线测试</title>
+    <title>在线测试</title>
     <link rel="shortcut icon" href="favicon.ico" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="滚动滑动,导航菜单" />
-    <meta name="description" content="移动菜单(可折回)" />
+    <meta name="keywords" content="在线测试" />
+    <meta name="description" content="在线测试" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <!-- 优先使用IE最新版本和 Chrome -->
     
@@ -24,10 +24,10 @@
         <!--nav-->
         <nav class="p_d">
             <ul>
-                <li><a href='javascript:;' onclick="history.go(-1)">返回</a>  <a href='index.html'>主页</a> </li>
-                <li class="right hide color_fff wet2www">移动菜单(可折回)</li>
+                <li><a href='javascript:;' onclick="history.go(-1)">返回</a>  <a href='http://eg.shoestrong.cc/demo/index.html'>主页</a> </li>
+                <li class="right hide color_fff wet2www" id="showText"></li>
             </ul>
-            <i class="erweima"><div class="tooltip"><img src="./templets/default/images/erweima.svg" width="20" height="20" />
+            <i class="erweima"><div class="tooltip"><img src="./templets/default/images/erweima.svg" width="20" height="20"/>
     <span><p>使用手机访问</p><i id="showCode" style="display:block;width:180px;height:180px;background-color:#fff;"></i></span></div>
     </i>
         </nav>
@@ -77,17 +77,28 @@
     <script type="text/javascript" src="./templets/default/pages/jquery.cookie.js"></script>
     <script type="text/javascript" src="./templets/default/pages/custompage.js"></script>
     <script type="text/javascript" src="./templets/default/pages/custompage0.js"></script>
-    <script type="text/javascript" src="./templets/default/pages/lib/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="./templets/default/pages/lib/qrcode.min.js"></script>
 	<script type="text/javascript">
 	var iSrc=$("#preview").attr("src");
+    
 	$.ajax({
 		url: iSrc,
 		dataType: 'html'
 	})
 	.done(function(data) {
-		$("#code").val(data);
+        $("#code").val(data);
+        var pattern =/<title>(.+?)<\/title>/g;
+        var text=data.match(pattern);
+        var l=text.toString().length;
+        var strs=text.toString().replace(/(#)/g, "").substring(7,l-8);
+        $("#showText").text(strs);
+        document.title=strs;
+        $("[name=keywords]").attr("content",strs);
+        $("[name=description]").attr("content",strs);
+
+
+        // 显示html
 	    var delay;
-	    // Initialize CodeMirror editor with a nice html5 canvas demo.
 	    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
 	        lineNumbers: true,
 	        lineWrapping: true,
@@ -110,8 +121,8 @@
 	        preview.close();
 	    }
 	    setTimeout(updatePreview, 300);
-		// $('#showCode').qrcode(iSrc);
-			
+		
+		// 二维码处理	
 		$("#showCode").empty();
 		var toUtf8=function(str) {   
 		    var out, i, len, c;   
@@ -133,13 +144,11 @@
 		    return out;   
 		};
 		var str = toUtf8(iSrc);
-		
-		$("#showCode").qrcode({
-			render: "table",
-			width: 180,
-			height:180,
-			text: str
-		});
+        var qrcode = new QRCode(document.getElementById("showCode"), {
+            width : 180,
+            height : 180
+        });
+        qrcode.makeCode(str);
 	});
 
     </script>
