@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>鼠标划过跟随</title>
+    <script src="../templets/default/pages/jquery-1.11.0.min.js"></script>
+    <style>
+    .container {
+        width: 300px;
+        margin: 0 auto;
+    }
+    
+    .container a {
+        line-height: 80px;
+        box-sizing: border-box;
+        color: #abcdef;
+        position: relative;
+        text-align: center;
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        height: 80px;
+        max-width: 250px;
+        text-transform: uppercase;
+        text-decoration: none;
+        overflow: hidden;
+        border: 1px solid currentColor;
+        /*currentColor当前文字的颜色*/
+    }
+    
+    .container a:hover {
+        cursor: pointer;
+    }
+    
+    .btnjs {
+        color: #5189D0;
+    }
+    
+    .btnjs span {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: #5189D0;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transition: width 0.4s, height 0.4s;
+        transition: width 0.4s, height 0.4s;
+        z-index: -1;
+    }
+    
+    .btnjs:hover {
+        color: #e5ccf1;
+    }
+    
+    .btnjs:hover span {
+        width: 525px;
+        /***按钮对角线的最大长度(三角函数)Math.sqrt(宽度的平方+高度的平方)再乘以2***/
+        height: 525px;
+    }
+    
+    .btnjs:active {
+        background: #1080D9;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>划过按钮，跟随鼠标的进入和离开的方向</p>
+        <a href="javascript:;" class="btnjs">划我<span></span></a>
+    </div>
+    <script>
+    $(function() {
+        $('.btnjs').on('mouseenter', function(e) {
+            var parentOffset = $(this).offset(),
+                relX = e.pageX - parentOffset.left,
+                relY = e.pageY - parentOffset.top;
+            console.log(parentOffset);
+            /**
+             * $(this).offset()当前对象相对于真个页面的上和右的固定偏移值：Object {top: 692, left: 757.84375}
+             *e.pageX鼠标相对于当前页面的x坐标值：变化的值
+             * e.pageY鼠标相对于当前页面的y坐标值：变化的值
+             *
+             */
+            console.log(e.pageX);
+            $(this).find('span').css({
+                top: relY,
+                left: relX
+            });
+        }).on('mouseout', function(e) {
+            var parentOffset = $(this).offset(),
+                relX = e.pageX - parentOffset.left,
+                relY = e.pageY - parentOffset.top;
+            $(this).find('span').css({
+                top: relY,
+                left: relX
+            });
+        });
+
+    });
+    </script>
+</body>
+
+</html>
