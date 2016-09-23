@@ -1,4 +1,4 @@
-# Shoestrong_eg
+# Shoestrong_eg 小案例
 
 ### 1.[history_sort](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/history_sort/remove.html) => 历史纪录排序
 
