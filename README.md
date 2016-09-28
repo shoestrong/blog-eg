@@ -1,23 +1,78 @@
 # Shoestrong_eg 小案例
 
-### 1.[history_sort](http://eg.shoestrong.cc/history_sort/) => 历史纪录排序
+***
 
-### 2.[mouse_move](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/mouse_move/mouseMove.html) => 跟随鼠标移动的小东西
+## eg-C
+### [canvas_dot](http://eg.shoestrong.cc/eg/canvas_dot/) => 例子动画
+### [click_everywhere_heart](http://eg.shoestrong.cc/eg/click_everywhere_heart/) => 点击页面任意位置显示出心形
+### [color_grey](http://eg.shoestrong.cc/eg/color_grey/) => 灰度颜色
 
-### 3.[image_mirror](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/image_mirror/image_mirror.html) => 整个网页镜像
+***
 
-### 4.[russian_box](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/russianBox/russianBox.html) => 这是一个俄罗斯方块游戏
+## eg-D
+### [draw_by_mouse](http://eg.shoestrong.cc/eg/draw_by_mouse/) => 鼠标绘画
 
-### 5.[num_to_zh](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/num_to_zh/num_to_zh.html) => 数字转化为汉字
+***
 
-### 6.[load_img](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/load_img/loadImg.html) => 滚动加载图片
+## eg-E
+### [english_letter](http://eg.shoestrong.cc/eg/english_letter/) => 用CSS写的英文字母
 
-### 7.[only_num](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/onlyNum/onlyNum.html) => 只能输入数字
+***
 
-### 8.[remove_num_point](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/remove_num_point/remove_num_point.html) => 是否为正整数
+## eg-G
+### [get_random_color](http://eg.shoestrong.cc/eg/get_random_color/) => 随机改变颜色色值
 
-### 9.[click_everywhere_heart](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/click_everywhere_heart/click_everywhere_heart.html) => 点击页面任意位置显示出心形
+***
 
-### 10.[getRandomColor](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/test/getRandomColor.html) => 随机改变颜色色值
+## eg-H
+### [history_sort](http://eg.shoestrong.cc/eg/history_sort/) => 历史纪录排序
 
-### 11.[up_down_row](http://htmlpreview.github.io/?https://github.com/Shoestrong/testForHtml/blob/master/test/up_down_row.html) => 上下移动整行
+***
+
+## eg-I
+### [image_mirror](http://eg.shoestrong.cc/eg/image_mirror/) => 历史纪录排序
+
+***
+
+## eg-J
+### [js_24points](http://eg.shoestrong.cc/eg/js_24points/) => 24点游戏
+
+***
+
+## eg-L
+### [load_img](http://eg.shoestrong.cc/eg/load_img/) => 页面滚动延迟加载图片
+
+***
+
+## eg-M
+### [mouse_point](http://eg.shoestrong.cc/eg/mouse_point/) => 鼠标跟随效果
+
+***
+
+## eg-N
+### [num_to_zh](http://eg.shoestrong.cc/eg/num_to_zh/) => 数字转化为汉字
+
+***
+
+## eg-O
+### [only_num](http://eg.shoestrong.cc/eg/only_num/) => 只能输入数字
+
+***
+
+## eg-R
+### [remove_num_point](http://eg.shoestrong.cc/eg/remove_num_point/) => 是否为正整数
+### [roll_jiang](http://eg.shoestrong.cc/eg/roll_jiang/) => 转盘抽奖
+### [russian_box](http://eg.shoestrong.cc/eg/russian_box/) => 俄罗斯方块游戏
+
+***
+
+## eg-U
+### [up_down_row](http://eg.shoestrong.cc/test/up_down_row) => 上下移动整行
+
+***
+
+## eg-W
+### [wubi_write](http://eg.shoestrong.cc/eg/wubi_write/) => 五笔输入法
+
+***
+
