@@ -56,11 +56,8 @@ a {
 .page-header {
   color: #fff;
   text-align: center;
-  background-image: url("http://eg.shoestrong.cc/stylesheets/image/bg_header.jpg");
-  /*background-repeat: no-repeat;*/
-  background-position: center 0;
-  /*background-image: linear-gradient(120deg, #155799, #159957); */
-}
+  background-color: #159957;
+  background-image: linear-gradient(120deg, #155799, #159957); }
 
 @media screen and (min-width: 64em) {
   .page-header {
@@ -229,13 +226,12 @@ a {
   border-top: solid 1px #eff0f1; }
 
 .site-footer-owner {
-  float: right; }
-.site-footer-owner a{
-  color: #abcdef; }
+  display: block;
+  font-weight: bold; }
+
 .site-footer-credits {
   color: #819198; }
-.site-footer-credits a{
-  color: #abcdef; }
+
 @media screen and (min-width: 64em) {
   .site-footer {
     font-size: 1rem; } }
@@ -245,8 +241,5 @@ a {
     font-size: 1rem; } }
 
 @media screen and (max-width: 42em) {
-  .site-footer-owner {
-    display: block;
-  float: none; }
   .site-footer {
     font-size: 0.9rem; } }
