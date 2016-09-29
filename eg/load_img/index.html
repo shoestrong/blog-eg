@@ -74,20 +74,22 @@ for (var i = 1; i < 21; i++) {
 }
 _CalF.$("#content").innerHTML = _temp.join("");
 
-function scrollLoad() {
+function ScrollLoad() {
     this.init.apply(this, arguments);
 }
-scrollLoad.prototype = {
+ScrollLoad.prototype = {
     init: function(className) {
         var className = "img." + className,
             imgs = _CalF.$(className),
             that = this;
         this.imgs = imgs;
-        that.loadImg();
+        window.onload = function(){
+            that.loadImg();
+        }
         window.onscroll = function() {
             that.time = setTimeout(function() {
                 that.loadImg();
-            }, 400);
+            }, 400);            
         }
     },
     loadImg: function() {
@@ -112,7 +114,7 @@ scrollLoad.prototype = {
 }
 
 
-    var img1 = new scrollLoad("scrollLoading");
+    var img1 = new ScrollLoad("scrollLoading");
 </script>
 
 </body>
