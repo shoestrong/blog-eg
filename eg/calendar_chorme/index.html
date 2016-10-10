@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>野草农历</title>
+<style>
+*{
+  outline: 0;
+}
+body, td, .p1, .p2, .i {
+  font-family: arial;
+  -webkit-user-select:none;
+}
+ 
+table {
+  border: 0
+}
+#cal {
+  width:426px;
+  height:360px;
+  font-size: 12px;
+  color: #555;
+}
+#cal #top {
+  height: 29px;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+}
+#today{
+  float: right;
+  border:none;
+  padding:2px 5px !important;
+  border-radius:2px;
+  background: #FC625D;
+  cursor: pointer;
+  color:#fff;
+}
+#cal #top select {
+  font-size: 14px
+}
+#cal #top input {
+  padding: 0
+}
+#cal ul#wk {
+  margin:0 0 10px 0;
+  padding:3px;
+  height:30px;
+  background: #efefef;
+  border-radius:5px;
+}
+#cal ul#wk li {
+  float: left;
+  width:60px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height:30px;
+  list-style: none
+}
+#cal ul#wk li b {
+  font-weight: normal;
+  color: #FC625D
+}
+#cal #cm {
+  clear: left;
+  position: relative;
+}
+#cal #cm .cell {
+  position: absolute;
+  width: 50px;
+  height:50px;
+  text-align: center;
+  margin: 0 0 0 9px;
+  color:#555;
+  cursor:pointer;
+}
+#cal #cm .cell:hover{
+  border-radius:5px;
+  background:#efefef;
+}
+#cal #cm .cell.active{
+  background:#FC625D;
+  box-shadow: 0px 3px 0px 0 #E04E3C;
+  border-radius:5px;
+  color:#Fff;
+}
+#cal #cm .cell.active *{
+  color:#Fff !important;
+}
+#cal #cm .cell .so {
+  font: bold 16px arial;
+  line-height: 180%;
+
+}
+#cal #bm {
+  text-align: right;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 13px 0 0
+}
+#cal #bm a {
+  color:#7977ce
+}
+#cal #fd {
+  display: none;
+  position: absolute;
+  background: #FDBD41;
+  color:#fff;
+  padding:5px;
+  border-radius:5px;
+  text-align: center;
+  line-height: 150%;
+  width:120px;
+  opacity:0.9;
+}
+/*#cal #fd:before{
+  content: "";
+  position: absolute;
+  left:20px;
+  top: -9px;
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid #FC625D;
+
+}*/
+#cal #fd b {
+  font-weight: normal;
+  color: #c60a00
+}
+#copyright{
+  position: absolute;
+  top:346px;
+  left:370px;
+}
+#copyright a{
+  text-decoration: none;
+  font-size: 11px;
+  font-family: Arial;
+  color:#999;
+}
+</style>
+<script src="popup.js"></script>
+</head>
+<body>
+<div id="cal">
+  <div id="top">
+    公元 <select></select> 年 <select></select> 月  农历 <span></span>年 <span></span>年
+    <input id="today" type="button" value="回到今天" title="点击后跳转回今天"></div>
+  <ul id="wk">
+    <li>周一</li>
+    <li>周二</li>
+    <li>周三</li>
+    <li>周四</li>
+    <li>周五</li>
+    <li><b>周六</b></li>
+    <li><b>周日</b></li>
+  </ul>
+  <div id="cm"></div>
+  <div id="bm"></div>
+</div>
+<div id="copyright"><a href="http://eg.shoestrong.cc" target="_blank">eg.shoestrong.cc</a></div>
+</body>
+</html>

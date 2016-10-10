@@ -1,8 +1,9 @@
-# Shoestrong_eg 小案例
+﻿# Shoestrong_eg 小案例
 
 ***
 
 ## eg-C
+### [calendar_chorme](http://eg.shoestrong.cc/eg/calendar_chorme/) => 仿谷歌日历
 ### [canvas_dot](http://eg.shoestrong.cc/eg/canvas_dot/) => 例子动画
 ### [click_everywhere_heart](http://eg.shoestrong.cc/eg/click_everywhere_heart/) => 点击页面任意位置显示出心形
 ### [color_grey](http://eg.shoestrong.cc/eg/color_grey/) => 灰度颜色
