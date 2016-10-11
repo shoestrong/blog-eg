@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>抛物线</title>
+	<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="parabola.js"></script>
+	<style>
+		#btn{
+			padding: 5px 10px;
+			background-color: #339966;
+			color: #fff;
+			border-color: #009966;
+			margin-bottom: 30px;
+		}
+		#pao{
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #abcdef;
+			color: #abcdef;
+			position: relative;
+			left: 500px;
+			top: 100px;
+		}
+		
+		#pao p{
+			position: absolute;
+			width: 100px;
+			left: -50%;
+			top: -40px;			
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击我你回发现什么</button>
+	<div id="pao">
+		<p>我要飞了</p>
+	</div>
+	<script>
+		$("#btn").click(function(event) {
+			parabola("#pao",{
+			   left:500,
+			   top:100,
+			}, {
+			   left:100,
+			   top:300,
+			},function(){
+			     $("#pao").css({"background-color":"#396","color": "#396"});
+			     $("#pao p").text("我已到达");
+			});
+		});
+	</script>
+</body>
+</html>
