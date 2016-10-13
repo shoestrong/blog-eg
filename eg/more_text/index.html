@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击生成随机文本</title>
+</head>
+<body>
+	<button id="randomBtn">点击生成随机文本</button>
+	<p style="line-height: 1.5;"></p>
+	<script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="simlebig.js"></script>
+	<script src="moretext-1.2.js"></script>
+	<script>
+		function more(){
+			$("p").moreText({
+				n:100, //正整数，句子条数
+				min:10, //正整數，每句字数限时最小，默认为0
+				max:15, //正整數，每句字数限时最大，默认为140
+				corpus:"laihe", //字符串，使用的语录。可使用的值为："laihe", "xuzhimo", "nextmedia", "tweets", "c9s"
+				callback: ''//jsonp回调
+			});
+		}
+		more();
+
+		$("#randomBtn").click(more);
+	</script>
+</body>
+</html>

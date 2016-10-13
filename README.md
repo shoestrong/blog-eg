@@ -46,6 +46,7 @@
 ***
 
 ## eg-M
+### [more_text](http://eg.shoestrong.cc/eg/more_text/) => 中文假文生成器
 ### [mouse_point](http://eg.shoestrong.cc/eg/mouse_point/) => 鼠标跟随效果
 
 ***
@@ -57,6 +58,11 @@
 
 ## eg-O
 ### [only_num](http://eg.shoestrong.cc/eg/only_num/) => 只能输入数字
+
+***
+
+## eg-P
+### [parabola_paowuxian](http://eg.shoestrong.cc/eg/parabola_paowuxian/) => 抛物线
 
 ***
 
