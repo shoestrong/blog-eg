@@ -5,7 +5,10 @@
 	<title>点击生成随机文本</title>
 </head>
 <body>
-	<button id="randomBtn">点击生成随机文本</button>
+	<button id="randomBtn">点击生成随机文本</button>  <a href="index2.html">另一个生成方法：不借助插件的两种方法</a>
+	<hr>
+	<div>生成的为诗词或新闻，根据corpus修改</div>
+	<hr>
 	<p style="line-height: 1.5;"></p>
 	<script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 	<script src="simlebig.js"></script>
@@ -22,7 +25,9 @@
 		}
 		more();
 
-		$("#randomBtn").click(more);
+		$("#randomBtn").click(function(){
+			location.reload();
+		});
 	</script>
 </body>
 </html>

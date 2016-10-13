@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />    
+    <title>点击生成随机文本</title>
+    <style>
+      .demo {
+      	margin: 50px;
+      	background-color: #ECECEC;
+      	font-size: 18px;
+        font-family: "Microsoft Yahei"
+      }
+    </style>
+  </head>
+
+  <body>
+  	<button id="randomBtn">点击生成随机文本</button>  <a href="index.html">借助于插件库的生成方法</a>
+  	<p>方法一：汉字全部随机</p>  
+    <div class="lorem(10) demo"></div>
+    <p class="lorem(2,8) demo"></p>
+    <p class="lorem(30,5-10) demo"></p>
+    <hr>
+    <p>方法二：用于生成随机文本的词汇，他们是前1000位常用的汉字。</p>
+    <div id="newLoren" class="demo"></div>
+	  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	  <script src="lorem-cht-text.js"></script>
+
+    <script>
+      var l=lorem(500, {"usePunc": true});
+      $("#newLoren").text(l);
+
+
+      $("#randomBtn").click(function(){
+			location.reload();
+		});
+    </script>
+  </body>
+</html>
