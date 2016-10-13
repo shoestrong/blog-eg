@@ -1,4 +1,4 @@
-﻿# Shoestrong_eg 小案例
+# Shoestrong_eg 小案例
 
 ***
 
