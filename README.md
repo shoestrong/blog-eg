@@ -63,6 +63,7 @@
 
 ## eg-P
 ### [parabola_paowuxian](http://eg.shoestrong.cc/eg/parabola_paowuxian/) => 抛物线
+### [plaxify_guthub404](http://eg.shoestrong.cc/eg/plaxify_guthub404/) => 模仿github404鼠标移动视差效果
 
 ***
 
