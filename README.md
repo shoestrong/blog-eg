@@ -76,12 +76,12 @@
 
 
 **U**
-* [up_down_row](http://eg.shoestrong.cc/test/up_down_row) => 上下移动整行
+* [up_down_row => 上下移动整行](http://eg.shoestrong.cc/eg/up_down_row)
 
 
 
 **W**
-* [wubi_write](http://eg.shoestrong.cc/eg/wubi_write/) => 五笔输入法
+* [wubi_write => 五笔输入法](http://eg.shoestrong.cc/eg/wubi_write/)
 
 
 
