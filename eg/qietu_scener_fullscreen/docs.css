@@ -1,0 +1,33 @@
+
+body{
+	padding:0; margin:0; line-height:2; color:#333;
+}
+#header,
+#footer{
+	height:100px; text-align:center; padding:20px;
+}
+#header{
+	background:#698; height:auto;
+}
+#header h1{
+	font-size:56px; font-weight:bold; color:#fff; margin:0; text-shadow:#344f46 1px 1px;
+}
+#footer{
+	height:auto; color:#666; font-size:12px;
+}
+
+#intro,
+#changelog,
+#follow{
+	background:#eee;
+}
+
+.QietuScenerPage{
+	text-align:center;
+}
+.QietuScenerPage h2{
+	margin-top:100px;
+}
+.QietuScenerPage h4{
+	font-weight:normal; color:#999;
+}

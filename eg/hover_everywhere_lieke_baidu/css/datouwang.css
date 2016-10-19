@@ -1,0 +1,32 @@
+/* 代码整理：大头网 www.datouwang.com */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+body{ font-family:"Microsoft Yahei", "微软雅黑", Tahoma, Arial, sans-serif}
+
+a{text-decoration:none;}
+.content{ width:744px; margin:50px auto}
+/*end globel style*/
+
+
+/*index content*/
+.da-thumbs{list-style:none;height:118px;position:relative;margin:0 0 25px 0;padding:0}
+.da-thumbs li{float:left;margin-right:12px;background:#fff;position:relative;border:2px solid #fafafa}
+.da-thumbs li a,.da-thumbs li a img{display:block;position:relative}
+.da-thumbs li a{color:#fff;overflow:hidden}
+.da-thumbs li a div{position:absolute;background:#333;background:rgba(1,152,117,0.9);*background:#0d9572;background:#0d9572\0;filter:alpha(Opacity=90);width:100%;height:100%}
+.da-thumbs li a em{display:block;width:92px;height:8px;background:rgba(255,255,255,0.3);*background:#fff;background:#fff\0;filter:alpha(Opacity=30);margin:0 10px}
+.da-thumbs li a h2{ font-size:20px;margin:6px 8px;font-weight:normal;text-align:center}
+.da-thumbs li a p{margin:8px 13px;font:normal 14px/18px 'Microsoft YaHei'}
+
+

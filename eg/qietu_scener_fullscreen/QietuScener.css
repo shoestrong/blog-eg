@@ -1,0 +1,71 @@
+@charset "utf-8";
+/*!
+ * 切图全景 QietuScener v1.0
+ *
+ * Copyright 2014 quanjing.qietu.com, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+ 
+
+
+.QietuScenerNav {
+	position: fixed;
+	_position: absolute;
+	_display: none;
+	z-index: 999;
+	right: 42px;
+	top: 50%;
+	margin-top: -52px;
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.QietuScenerNav li {
+	margin-top: 6px;
+}
+.QietuScenerNav li:first-child {
+	margin-top: 0;
+}
+.QietuScenerNav li a {
+	display: block;
+	width: 12px;
+	height: 12px;
+	border:#333 solid 1px;
+	border-radius:100%;
+}
+li.QietuScenerNavCurr a {
+star:expression(this.onFocus=this.blur());
+	background:#333;
+}
+.QietuScenerNav li.hide {
+	display:none;
+}
+.QietuScenerPage {
+	overflow:hidden;
+	border-bottom: 1px solid #e5e5e5;
+	position:relative;
+}
+.QietuScenerPage img {
+	width:100%;
+}
+.QietuScenerArrow, .QietuScenerArrowBlack {
+	background:url(../imgs/arrow.png) no-repeat;
+	width:13px;
+	height:48px;
+	position:absolute;
+	left:50%;
+	margin-left:-6px;
+	bottom:20px;
+	transition: all 0.3s ease-in-out 0s;
+	opacity:0;
+	-webkit-animation: bounce-up 1.4s linear infinite;
+	animation: bounce-up 1.4s linear infinite;
+}
+.QietuScenerArrowBlack {
+	background:url(../imgs/arrow_black.png) no-repeat;
+}
+.active .QietuScenerArrow, .active .QietuScenerArrowBlack {
+	opacity:1;
+}

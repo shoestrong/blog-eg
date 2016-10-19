@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	 *{ margin:0; padding:0;}  
+	  
+	.cjbox{ margin:100px; height:80px; width:200px; background:#FFF; position:relative;}
+	#canvas{position:absolute; left:0px; top:0px;z-index:99;}
+	.sjmes{ position:absolute; left:0px; top:0px; height:80px; width:200px; text-align:center; font-size:40px; line-height:80px; z-index:9;}
+	</style>
+</head>
+<body>
+<div style="position:relative; margin:20px 100px; background:#0CF; height:400px; width:500px; margin:0 auto;">
+    <div>刮刮卡简单抽奖</div>
+    <div class="cjbox">
+        <div class="sjmes" id="sjmes"></div>
+        <canvas width=200 height=80 id="canvas"></canvas> 
+    </div>
+</div> 
+ 
+</body>
+<script type="text/javascript">
+//init  
+var cjcon=["一等奖","二等奖","三等奖","谢谢参与"];//奖项设置
+var cjper=[3,10,20,100];//奖项率，次数
+/*
+ * sjmes
+ * @Author 透笔度（1530341234@qq.com）                   
+ * @param {cjcon}      所有奖项     
+ */
+var percjcon=[];
+for(var i=0;i<cjper.length;i++){
+    peic(cjper[i],i);
+};
+function peic(len,ind){
+    for(var i=0;i<len;i++){
+        percjcon.push(cjcon[ind]);
+    };  
+};
+var sjmes = document.getElementById("sjmes");
+var numrandom=Math.floor(Math.random()*percjcon.length);
+sjmes.innerHTML=percjcon[numrandom];
+ 
+var opacityb=0.5;//透明百分比,参考值,什么程度出现提示
+var backcolorb="#ffaaaa";
+var numl=200*80;//总像素个数
+var nump;//出现backcolorb的个数
+var opacitya;//透明百分比实际值
+ 
+var canvas = document.getElementById("canvas");  //获取canvas   
+var context = canvas.getContext('2d');  //canvas追加2d画图
+var flag = 0;  //标志，判断是按下后移动还是未按下移动 重要
+var penwidth=20; //画笔宽度
+context.fillStyle="#faa";  //填充的颜色
+context.fillRect(0,0,200,80);  //填充颜色 x y坐标 宽 高
+ 
+canvas.addEventListener('mousemove', onMouseMove, false); //鼠标移动事件 
+canvas.addEventListener('mousedown', onMouseDown, false);  //鼠标按下事件 
+canvas.addEventListener('mouseup', onMouseUp, false);  //鼠标抬起事件 
+var movex=-1;
+var movey=-1;
+var imgData;//imagedada容器
+var rgbabox=[];//存放读取后的rgba数据；
+function onMouseMove(evt) {
+    if (flag == 1) {  
+        movex=evt.layerX;
+        movey=evt.layerY;       
+        context.fillStyle="#FF0000";
+        context.beginPath();
+        context.globalCompositeOperation="destination-out";
+        context.arc(movex,movey,penwidth,0,Math.PI*2,true); //Math.PI*2是JS计算方法，是圆       
+        context.closePath();
+        context.fill();
+    }  
+}  
+function onMouseDown(evt) {  
+  flag = 1;  //标志按下
+}  
+function onMouseUp(evt) {  
+    flag = 0;
+    //读取像素数据
+    imgData=context.getImageData(0,0,200,80);//获取当前画布数据
+    //imgData.data.length 获取图片数据总长度，没4个为一组存放rgba
+    for(var i=0; i<imgData.data.length;i+=4){
+        var rval=imgData.data[i];
+        var gval=imgData.data[i+1];
+        var bval=imgData.data[i+2];
+        var aval=imgData.data[i+3];
+        var rgbaval=rval+"-"+gval+"-"+bval+"-"+aval;
+        rgbabox.push(rgbaval);
+    }
+    //end
+    for(var j=0;j<rgbabox.length;j++){
+        //alert(rgbabox[j].split("-")[0])
+        rgbabox[j]='#'+rgbToHex(rgbabox[j].split("-")[0],rgbabox[j].split("-")[1],rgbabox[j].split("-")[2]);        
+    }
+    nump=countSubstr(rgbabox.join(","),backcolorb,true);
+    opacitya=(numl-nump)/numl;
+    if(opacitya>opacityb){
+        alert("恭喜你获得"+percjcon[numrandom])
+    }else{}
+  
+} 
+function rgbToHex(r, g, b) { return ((r << 16) | (g << 8) | b).toString(16); }//rgb转为16进制 #xxx形式
+function countSubstr(str,substr,isIgnore){//计算字符串出现子字符串的个数
+    var count;
+    var reg="";
+    if(isIgnore==true){
+    reg="/"+substr+"/gi"; 
+    }else{
+    reg="/"+substr+"/g";
+    }
+    reg=eval(reg);
+    if(str.match(reg)==null){
+    count=0;
+    }else{
+    count=str.match(reg).length;
+    }
+    return count;
+}
+//end
+</script>
+</html>

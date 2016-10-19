@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>qrcode</title>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <script>
+        $(function(){
+//            var url=window.location.href;
+            $('#code').qrcode({
+//              render:'table',
+                width:520,
+                height:520,
+                text:'http://shoestrong.cc'
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="code"></div>
+</body>
+</html>

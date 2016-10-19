@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>全景JS框架</title>
+<meta name="keywords" content="全景js框架,场景js框架">
+<meta name="description" content="全景js来自“fullpage”，是切图公司自主开发的一款快速场景js框架。">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=1200">
+<meta name="copyright" content="vivo"> 
+
+<!--需要加载的css文件-->
+<link href="QietuScener.css" rel="stylesheet" type="text/css">
+<!--结束-->
+<link href="docs.css" rel="stylesheet" type="text/css">
+
+<!--需要加载的js文件-->
+<script src="jquery.min.js" ></script>
+<script src="jquery.easing.1.3.js" ></script>
+<script src="jquery.mousewheel.js" ></script>
+<script src="scrollify.min.js" ></script>
+<script src="QietuScener.js" ></script>
+<!--结束-->
+<script src="docs.js" ></script>
+
+</head>
+<body>
+
+<!--场景导航固定写法-->
+<ul class="QietuScenerNav">
+  <li class="hide selected"><a href="#header"></a></li>
+  <li class="QietuScenerNavCurr"><a href="#intro"></a></li>
+  <li><a href="#feature"></a></li>
+  <li><a href="#changelog"></a></li>
+  <li><a href="#example"></a></li>
+  <li><a href="#follow"></a></li>
+  <li class="hide"><a href="#footer"></a></li>
+</ul>
+
+
+<div class="naver" id="header">
+	<span class="alert" style="background:#ffd ; color:#333; display:inline-block; padding:10px;">
+    	使用方法请直接查看源代码！
+    </span>
+	<h1>QietuScener.js</h1>
+</div>
+
+<!--场景内容固定写法-->
+<div id="QietuScenerWrap">
+
+  <div class="QietuScenerPage" id="intro" style="display:;">
+  		<div class="QietuScenerArrow"></div>
+  		 	
+        <h2>兼容ie6+</h2>
+        <h4>我们没有刻意追求在ie6下的兼容，但是合理的布局，js书写规范，是可以某种程度上避免ie6的不兼容。</h4>
+  </div>
+  
+  <div class="QietuScenerPage" id="feature">
+  		<div class="QietuScenerArrowBlack"></div>
+  		
+        <h2>傻瓜式</h2>
+        <h4>当你加载js文件后，和按规定布局好html以后，一个网页场景雏形就出来了。</h4>
+  </div>
+  
+  
+  <div class="QietuScenerPage" id="changelog">
+  		<div class="QietuScenerArrowBlack"></div>
+  
+  		
+        <h2>运用在真实项目</h2>
+        <h4>这是切图公司开发的js框架（也许算不上框架，至少还没有封装），已经运用在真实项目中！你绝不是小白鼠。</h4>
+
+  </div>
+  <div class="QietuScenerPage" id="example">
+  		<div class="QietuScenerArrowBlack"></div>
+  	 	
+        <h2>支持css3动画定义</h2>
+        <h4>我们开发这个js的时候，特意的为当前屏幕添加了一个active类，这样的好处是你可以灵活的定义css3动画。</h4>
+  </div>
+  <div class="QietuScenerPage" id="follow">
+  		<div class="QietuScenerArrowBlack"></div>
+  	 	 
+        <h2>关注我们</h2>
+        <h4>微信公众号：qietuwang<br />
+        微博：http://weibo.com/qietuwang<br />
+        发邮件给开发者：developer@qietu.com</h4>
+  </div>
+</div>
+
+
+<div id="footer" class="footer">
+	&copy; CopyRight 2002-2013, 全景 quanjing.qietu.com, Inc.All Rights Reserved. 
+</div>
+</body>
+</html>
