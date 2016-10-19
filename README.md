@@ -22,6 +22,7 @@
 
 ## eg-G
 ### [get_random_color](http://eg.shoestrong.cc/eg/get_random_color/) => 随机改变颜色色值
+### [get_image_color](http://eg.shoestrong.cc/eg/get_image_color/) => 获取图片主要颜色
 
 ***
 
