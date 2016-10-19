@@ -1,4 +1,4 @@
-# **[Shoestrong_eg 小案例 >>](http://eg.shoestrong.cc)**
+﻿# **[Shoestrong_eg 小案例 >>](http://eg.shoestrong.cc)**
 
 ***
 
@@ -32,7 +32,7 @@
 
 
 **I**
-* [image_mirror => 历史纪录排序](http://eg.shoestrong.cc/eg/image_mirror/)
+* [image_mirror => 图片镜像](http://eg.shoestrong.cc/eg/image_mirror/)
 
 
 
