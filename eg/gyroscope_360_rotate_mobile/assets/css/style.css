@@ -1,0 +1,165 @@
+/* A Linux- and Windows-friendly sans-serif font stack: http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack */
+body {font: 13px Helmet, Freesans, sans-serif;}
+
+/* Using local fonts? Check out Font Squirrel's webfont generator: http://www.fontsquirrel.com/tools/webfont-generator */
+
+/* We like off-black for text. */
+body, select, input, textarea {color: #333;}
+
+a {color: #03f;}
+a:hover {color: #69f;}
+
+/* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
+::selection {background: #fcd700; color: #fff; text-shadow: none;} 
+
+/*	j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: #fcd700;} 
+
+ins {background-color: #fcd700; color: #000; text-decoration: none;}
+mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+
+/* Mozilla dosen't style place holders by default */
+input:-moz-placeholder { color:#a9a9a9; }
+textarea:-moz-placeholder { color:#a9a9a9; }
+
+.wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.panorama-box{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.panorama-item{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.panorama-item{
+    background: url("../images/panorama.png");
+    background-size: auto 100%;
+}
+.petal{
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.petal-00{
+    width: 480px;
+    height: 852px;
+    top: 0px;
+    left: 0px;
+    background-image: url("../images/00.png");
+}
+
+.petal-1{
+    width: 244px;
+    height: 122px;
+    top: 564px;
+    left: 278px;
+    background-image: url("../images/s1.png");
+}
+.petal-2{
+    width: 203px;
+    height: 125px;
+    top: 366px;
+    left: 1074px;
+    background-image: url("../images/s2.png");
+}
+.petal-3{
+    width: 213px;
+    height: 128px;
+    top: 235px;
+    left: 1778px;
+    background-image: url("../images/s3.png");
+}
+.petal-4{
+    width: 240px;
+    height: 122px;
+    top: 103px;
+    left: 2650px;
+    background-image: url("../images/s4.png");
+}
+.petal-5{
+    width: 221px;
+    height: 138px;
+    top: 373px;
+    left: 3454px;
+    background-image: url("../images/s5.png") no-repeat;
+}
+.petal-6{
+    width: 239px;
+    height: 120px;
+    top: 186px;
+    left: 4145px;
+    background-image: url("../images/s6.png") no-repeat;
+}
+.open-btn{
+    width: 76px;
+    height: 76px;
+    position: absolute;
+    background:url("../images/open_btn.png") no-repeat;
+}
+.petal-1 .open-btn{
+    top: 13px;
+    left: -15px;
+}
+.petal-2 .open-btn{
+    top: 31px;
+    left: 157px;
+}
+.petal-3 .open-btn{
+    top: 51px;
+    left: 172px;
+}
+.petal-4 .open-btn{
+    top: 3px;
+    left: 111px;
+}
+.petal-5 .open-btn{
+    top: 36px;
+    left: 172px;
+}
+.petal-6 .open-btn{
+    top: -18px;
+    left: 123px;
+}
+
+
+
+
+.info{
+    position: fixed;
+    z-index: 9999;
+}
+.info button{
+    font-size: 40px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* Media queries
+-------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 480px) {
+	
+		
+}
+
+
+
+/* Print styles
+-------------------------------------------------------------------------------*/
+@media print {
+
+
+
+}

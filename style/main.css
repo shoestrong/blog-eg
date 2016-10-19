@@ -1,0 +1,100 @@
+html{
+    -webkit-overflow-scrolling: touch;
+	font-family: "Helvetica Neue","Arial","PingFang SC","Hiragino Sans GB","STHeiti","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+}
+.flexbox {
+  display: -webkit-box;      
+  display: -moz-box;         
+  display: -ms-flexbox;    
+  display: -webkit-flex;
+  display: flex; 
+ }
+ .flex_1 {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; 
+}
+.flex_horizontal{
+	-webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    -moz-box-orient:horizontal;
+    -moz-box-direction:normal;
+    flex-direction:row;
+    -webkit-flex-direction:row;
+}
+.flex_vertical{
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	-moz-box-orient:vertical;
+	-moz-box-direction:normal;
+	flex-direction:column;
+	-webkit-flex-direction:column;
+}
+
+.container{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.header{
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	background-color: #396;
+}
+.main_content{
+	overflow-y: scroll;
+	padding: 10px;
+}
+
+.markdownStyle p strong{
+	width: 30px;
+	height: 30px;
+	display: block;
+	background-color: #396;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+}
+.markdownStyle h1 a{
+	text-decoration: none;
+	color: #666;
+}
+.markdownStyle a:hover{
+	color: #396;
+}
+.markdownStyle ul li{
+	line-height: 2;
+	color: #666;
+}
+.markdownStyle ul li a{
+	color: #666;
+	text-decoration: none;
+}
+
+.footer{
+	width: 100%;
+	line-height: 1.5;
+}
+.main-foot{
+	width: 100%;
+	padding: 8px 0;
+	background-color: #396;
+	color: #fff;
+	text-align: center;
+	font-size: 12px;
+}
+.main-foot a{
+	color: #fff;
+	text-decoration: none;
+}
+.main-foot a:hover{
+	text-decoration: underline;
+}
