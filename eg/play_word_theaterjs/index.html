@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打字效果</title>
+	
+	<style>
+		.playText{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			font-family: "Microsoft Yahei";
+			font-size: 20px;
+			word-break:break-all;
+			text-align: center;
+		}
+		@keyframes blink {
+		  from { opacity: 0.5; }
+		  to { opacity: 1; }
+		}
+
+		.doingStyle::after {
+		  content: '|';
+		  animation: blink 500ms infinite;
+		}
+	</style>
+</head>
+<body>
+	<div id="vader" class="playText"></div>
+	<script src="https://cdn.jsdelivr.net/theaterjs/latest/theater.min.js"></script>
+	<script>
+		var theater = theaterJS();
+
+		theater.on('type:start, erase:start', function () {
+					theater.getCurrentActor().$element.classList.add('doingStyle');
+				}).on('type:end, erase:end', function () {
+					theater.getCurrentActor().$element.classList.remove('doingStyle');
+				});
+
+		theater.addActor('vader', { speed: 0.8, accuracy: 0.6 })   //speed是打字速度，accuracy是打字精确度
+				.addScene('vader:开始使用theater.js，首先错错错错错',-5,'打错5个字，发现会删除。', 1000)
+				.addScene('vader:再来一行，前一句延迟了1000ms，然后删除。这句结束2000ms以后，又重新从头开始了', 2000)
+				.addScene(theater.replay);
+				// .addScene(theater.stop)
+	</script>
+</body>
+</html>

@@ -84,6 +84,7 @@
 * [page_switch => 实现图片翻转切换效果](http://eg.shoestrong.cc/eg/page_switch/)
 * [parabola_paowuxian => 抛物线](http://eg.shoestrong.cc/eg/parabola_paowuxian/)
 * [plaxify_guthub404 => 模仿github404鼠标移动视差效果](http://eg.shoestrong.cc/eg/plaxify_guthub404/)
+* [play_word_theaterjs => 打字效果](http://eg.shoestrong.cc/eg/play_word_theaterjs/)
 * [prize_cut => 刮奖](http://eg.shoestrong.cc/eg/prize_cut/)
 
 
