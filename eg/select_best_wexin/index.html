@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<title>微信最新筛选</title>
+	<style>
+		*{margin: 0;padding: 0;-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
+		li{list-style-type: none;}
+		html{font-family: "microsoft yahei"}
+		body{background-color: #eee;}
+		.header{height: 50px;line-height: 50px;background-color: #396; color: #fff;margin-bottom: 10px;text-align: center;}
+		.content{max-width: 600px;margin: 0 auto;background-color: #fff;box-shadow: 0px 1px 5px rgba(0,0,0,.5);}
+		.list{list-style-type: none;clear: both;margin-bottom: 10px;height: 50px;padding: 0 10px;}
+		.list a{text-decoration: none;color:#396;height: 100%;display: block;}
+		.list a dl{height: 100%;position: relative;}
+		.list a dt{width: 65px;height: 50px;overflow: hidden;float: left;margin-right: 5px;}
+		.list a dt img{width: 100%;height: 100%;}
+		.list a dd{line-height: 1.3;font-size: 12px;color: #ccc;position: absolute;left: 70px;top: 50%;transform: translateY(-50%);}
+		.list a dd p{font-size: 14px;margin-bottom: 0px;color: #396;}
+
+		.page{width: 240px;height: 30px;margin: 0 auto;padding: 10px 0;}
+		.page li{float: left;line-height: 30px;}
+		.num{cursor: pointer;float: left;width: 80px;height: 30px;line-height: 30px;text-align: center;}
+		.next{float: right;}
+		.hover{background-color: #396;color: #fff;}
+		.active{background-color: #ccc;color: #000;}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<header class="header">
+			精选微信
+		</header>
+		<ul id="get"></ul>
+		<ol class="page">
+			<li class="num prev active" id="prev">上一页</li>
+			<li class="num showNum" id="showNum"><span>0</span> / <i>0</i></li>
+			<li class="num next" id="next">下一页</li>
+		</ol>
+	</div>
+	<script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		var num=1;
+		var pages;
+		$("#showNum").find("span").text(num);
+		pageGo(num);
+		function pageGo(num){
+			$.ajax({
+				url: "./data.php",
+				data: {"pno":num,"ps":20},
+				dataType:"json",
+				success: function(data){
+					console.log(data.result);
+					pages=parseInt(data.result.totalPage);
+					$("#showNum").find("i").text(pages);
+					var pageHtml="";
+					var html="";
+					for(var i=0;i<data.result.list.length;i++){
+						if(data.result.list[i].firstImg==""){
+							data.result.list[i].firstImg="def.gif";
+						}
+						html+='<li class="list">'+
+								'<a href="'+data.result.list[i].url+'" target="_blank"><dl>'+
+									'<dt><img src="'+data.result.list[i].firstImg+'"></dt>'+
+									'<dd><p>标题：'+data.result.list[i].title+'</p>作者：'+data.result.list[i].source+'</dd>'+
+								'</dl></a>'+
+							'</li>'
+					}
+					$("#get").html(html)
+				}
+			});
+		}
+
+		$("#prev").click(function(){
+			num--;
+			if(num<1){
+				num=1;
+				return false;
+			};
+			
+			if(num<pages){
+				$("#next").removeClass('active');
+			}
+			num==1?$(this).addClass('active'):$(this).removeClass('active');
+			$("#showNum").find("span").text(num);
+			pageGo(num);
+		}).hover(function(){
+			if(num!=1) $(this).addClass('hover');
+		},function(){
+			if(num!=1) $(this).removeClass('hover');
+		})
+		$("#next").click(function(){
+			num++;
+			if(num>pages){
+				num=pages;
+				return false;
+			}
+			if(num>1){
+				$("#prev").removeClass('active');
+			}
+			num==pages?$(this).addClass('active'):$(this).removeClass('active');
+			$("#showNum").find("span").text(num);
+			pageGo(num);
+		}).hover(function(){
+			if(num!=pages) $(this).addClass('hover');
+		},function(){
+			if(num!=pages) $(this).removeClass('hover');
+		})
+	</script>
+</body>
+</html>
