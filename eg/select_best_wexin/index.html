@@ -47,7 +47,7 @@
 		pageGo(num);
 		function pageGo(num){
 			$.ajax({
-				url: "./data.php",
+				url: "http://v.juhe.cn/weixin/query?key=",
 				data: {"pno":num,"ps":20},
 				dataType:"json",
 				success: function(data){
