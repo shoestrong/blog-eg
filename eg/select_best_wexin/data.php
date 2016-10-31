@@ -91,3 +91,4 @@ function juhecurl($url,$params=false,$ispost=0){
     curl_close( $ch );
     return $response;
 }
+?>
