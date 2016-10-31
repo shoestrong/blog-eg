@@ -101,6 +101,7 @@
 
 
 **S**
+* [select_best_wexin => 三级城市联动](http://eg.shoestrong.cc/eg/select_best_wexin/)
 * [select_city_3grade => 三级城市联动](http://eg.shoestrong.cc/eg/select_city_3grade/)
 
 
