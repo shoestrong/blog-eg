@@ -1,4 +1,4 @@
-﻿# **[Shoestrong_eg 小案例 >>](http://eg.shoestrong.cc)**
+# **[Shoestrong_eg 小案例 >>](http://eg.shoestrong.cc)**
 
 ***
 
@@ -27,6 +27,7 @@
 
 
 **E**
+* [earth_photo_3d => 球状照片旋转](http://eg.shoestrong.cc/eg/earth_photo_3d/) 
 * [english_letter => 用CSS写的英文字母](http://eg.shoestrong.cc/eg/english_letter/)
 
 
@@ -84,7 +85,6 @@
 * [page_switch => 实现图片翻转切换效果](http://eg.shoestrong.cc/eg/page_switch/)
 * [parabola_paowuxian => 抛物线](http://eg.shoestrong.cc/eg/parabola_paowuxian/)
 * [plaxify_guthub404 => 模仿github404鼠标移动视差效果](http://eg.shoestrong.cc/eg/plaxify_guthub404/)
-* [play_word_theaterjs => 打字效果](http://eg.shoestrong.cc/eg/play_word_theaterjs/)
 * [prize_cut => 刮奖](http://eg.shoestrong.cc/eg/prize_cut/)
 
 
@@ -101,7 +101,6 @@
 
 
 **S**
-* [select_best_wexin => 微信精选](http://eg.shoestrong.cc/eg/select_best_wexin/)
 * [select_city_3grade => 三级城市联动](http://eg.shoestrong.cc/eg/select_city_3grade/)
 
 
